@@ -1,0 +1,237 @@
+/***** typeofgraphy ******/ 
+
+* {
+  font-family: 'Nunito', sans-serif;
+ 
+}
+
+h1 {
+  font-family: 'Cascadia Mono', sans-serif;
+  font-size: 40px;
+}
+
+h2 {
+  font-family: 'Cascadia Mono', sans-serif;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+h3 {
+  font-family: 'Cascadia Mono', sans-serif;
+  color: #023e8a;
+}
+
+p {
+ font-size: 16px;
+}
+
+/***** components ******/
+
+.cart-btn {
+  background-color: transparent;
+  border: none;
+}
+
+.bi-bag {
+  font-size: 30px;
+  color: #98c1d9;
+  cursor: pointer;
+}
+
+.ham-burger {
+  width: 60px;
+  height: 50px;
+  border: none;
+  cursor: pointer;
+  padding: 12px;
+  background-color: transparent;
+}
+
+.burger-bar {
+  width: 10%;
+  background-color: #98c1d9;
+  height: 7px;
+  border-radius: 15px;
+  position: absolute;
+  right: 75px;
+  transform: translate(-50%, -50%);
+  transition-property: transform, opacity, top ;
+  transition-duration: .9s, .6s;
+  top: 71px;
+}
+
+.bar-center {
+  top: 60px;
+}
+
+.bar-bottom {
+  top: 48px;
+}
+
+.ham-burger.active .bar-top {
+  transform: translate(-50%, -50%) rotate(-315deg);
+  top: 55px;
+}
+
+.ham-burger.active .bar-center {
+  opacity: 0;
+}
+
+.ham-burger.active .bar-bottom {
+  transform: translate(-50%, -50%) rotate(-225deg);
+  top: 54px;
+}
+
+.link {
+  display: flex;
+  gap: 10px;
+  text-decoration: none;
+  color: #fff;
+}
+
+
+.hero-btn {
+  width: 35%;
+  padding: 7px;
+  font-size: 14px;
+  border-radius: 9px;
+  bottom: 75px;
+}
+
+.item-btn {
+  padding: 7px 10px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0px 1px 0px black;
+}
+
+.item-price {
+  font-size: 14px;
+}
+/***** components ******/
+
+
+
+
+
+/***** body ******/
+
+.container {
+  max-width: 375px;
+  margin: 14px;
+  width: 92%;
+}
+
+body {
+  margin: 0;
+  background-color: #fff;
+}
+
+
+/***** body ******/
+
+
+
+
+/***** header ******/
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.nav-bar {
+  position: absolute;
+  background-color: #98c1d9;
+  width: 95%;
+  display: none;
+  flex-direction: row;
+  padding: 10px;
+  justify-content: space-evenly;
+  top: 70px;
+  transition:ease-in;
+  left: 0;
+}
+
+/***** header ******/
+
+
+
+/***** main section ******/
+
+
+
+/**** hero section  ****/
+
+.hero-section {
+  background-color: #f4f4f4;
+  bottom: 285px;
+}
+
+.hero-image {
+ width: 100%;
+ opacity: 0.6;
+ border-radius: 15px;
+
+}
+
+.hero-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  bottom: 300px;
+  position: absolute;
+  left: 15px;
+  width: 280px;
+}
+
+/**** hero section  ****/
+
+
+
+
+/**** product section  ****/
+
+.tech-products {
+  background-color: #0992C2;
+  padding: 15px;
+  margin-top: 10px;
+  border-radius: 15px;
+}
+
+.product-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.product-card {
+  width: 90%;
+  display: flex;
+  flex-direction: row-reverse;
+  background-color: #98c1d9;
+  justify-content: space-between;
+  border-radius: 15px;
+}
+
+.card-image {
+  width: 50%;
+  border-radius: 10px 0px 0px 10px;
+}
+
+.card-text-content {
+  text-align: center;
+  padding: 0px 24px;
+}
+
+.card-text-content h3 {
+  margin-bottom: 0;
+}
+
+.card-text-content p {
+  margin: 7px ;
+}
