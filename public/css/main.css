@@ -7,7 +7,8 @@
 
 h1 {
   font-family: 'Cascadia Mono', sans-serif;
-  font-size: 40px;
+  font-size: 32px;
+  color: #274c77;
 }
 
 h2 {
@@ -27,6 +28,11 @@ p {
  font-size: 16px;
 }
 
+/***** typeofgraphy ******/ 
+
+
+
+
 /***** components ******/
 
 .cart-btn {
@@ -34,10 +40,27 @@ p {
   border: none;
 }
 
+.bi-bag:hover {
+  width: 10px;
+  background-color: #e7ecef;
+}
+
+
+.input {
+  position: absolute;
+  font-size: 14px;
+
+  height: 0;
+  right: 33px;
+  top: 46px;
+  color: #98c1d9;
+}
+
 .bi-bag {
   font-size: 30px;
   color: #98c1d9;
   cursor: pointer;
+  transition: 0.1s;
 }
 
 .ham-burger {
@@ -105,10 +128,13 @@ p {
   border-radius: 5px;
   border: none;
   box-shadow: 0px 1px 0px black;
+  margin-top: 14px;
 }
 
+
+
 .item-price {
-  font-size: 14px;
+  font-size: 12px;
 }
 /***** components ******/
 
@@ -197,15 +223,20 @@ header {
 /**** product section  ****/
 
 .tech-products {
-  background-color: #0992C2;
+  background-color: #e7ecef;
   padding: 15px;
   margin-top: 10px;
   border-radius: 15px;
 }
 
+.tech-products h2 {
+  color: #274c77;
+}
+
 .product-cards {
   display: flex;
   flex-wrap: wrap;
+  gap: 20px;
   justify-content: space-around;
 }
 
@@ -216,6 +247,7 @@ header {
   background-color: #98c1d9;
   justify-content: space-between;
   border-radius: 15px;
+  box-shadow: 0px 6px 14px -8px  black;
 }
 
 .card-image {

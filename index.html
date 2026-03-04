@@ -29,7 +29,17 @@
          
          <div class="burger-bar bar-bottom"></div>
       </button>
-      <button class="cart-btn"><i class="bi bi-bag"></i></button>
+
+      <!-- shopping bag slide in -->
+      <div class="shopping-section">
+        <div class="cart-content">
+          <button class="cart-btn">
+            <i class="bi bi-bag"></i>
+            <span class="input" id="bag-output">0</span>
+          </button>
+        </div>
+      </div>
+      
     </header>
   <!----- header section ----->
 
@@ -55,15 +65,29 @@
             <h2>Popular Tech</h2>
           <div class="product-cards">
 
+          <!---- product-card-1 ---->
             <article class="product-card">
               <div class="card-text-content">
                <h3>macbook</h3>
                 <p>laptop</p>
-                <span class="item-price">$</span>
+                <span class="item-price">$400</span>
                 <button class="item-btn">purchase</button>
               </div>
               <img class="card-image" src="./public/assets/images/dlxmedia-hu-UkpTGYox6RM-laptop.jpg" alt="image of laptop">
             </article>
+          <!---- product-card-1 ---->
+
+
+          <!---- product-card-2 ---->
+            <article class="product-card">
+              <div class="card-text-content">
+                <h3>fitbit</h3>
+                <p>smartwatch</p>
+                <button class="item-btn">purchase</button>
+              </div>
+              <img class="card-image" src="./public/assets/images/ivan-shilov-KiAYZZjpsmartwatch.jpg" alt="image of smartwatch">
+            </article>
+          <!---- product-card-2 ---->
           </div>
         </section>
     </main>
