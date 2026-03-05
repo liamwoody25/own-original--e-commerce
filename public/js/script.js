@@ -4,6 +4,15 @@ const cartBtn = document.querySelector('.bi-bag');
 const cartOffScreen = document.querySelector('.shopping-section')
 const menuDropDown = document.querySelector('.nav-bar');
 
+const bagProducts = [
+  {
+    Name: 'macbook',
+    category: 'laptop',
+    price: 400,
+    
+  }
+]
+
 
 // this function sends the product to the cart when the purchase btn is clicked
 function sendProductToCart(i) {
@@ -17,6 +26,17 @@ function sendProductToCart(i) {
   output.innerText = result
   
 }
+
+
+
+
+
+
+
+
+
+
+
 
 // function hamBurgerMenu() {
 //   if (burgerToggle.classList.toggle('active')) {
@@ -37,7 +57,7 @@ function cartDisplay() {
 
 
 for (let i = 0 ; i < purchaseBtn.length ; i++ ) {
-    purchaseBtn[i].addEventListener('click', function(){
+  purchaseBtn[i].addEventListener('click', function(){
     sendProductToCart(i)
   })
 }

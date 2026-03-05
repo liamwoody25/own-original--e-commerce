@@ -221,10 +221,10 @@ header {
   display: flex;
   flex-wrap: wrap;
   justify-content: left;
-  bottom: 300px;
-  position: absolute;
-  left: 15px;
+  bottom: 289px;
+  left: 25px;
   width: 280px;
+  height: 0;
 }
 
 /**** hero section  ****/
