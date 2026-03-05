@@ -1,7 +1,11 @@
 const purchaseBtn = document.querySelectorAll('.item-btn')
 const burgerToggle = document.querySelector('.ham-burger');
+const cartBtn = document.querySelector('.bi-bag');
+const cartOffScreen = document.querySelector('.shopping-section')
 const menuDropDown = document.querySelector('.nav-bar');
 
+
+// this function sends the product to the cart when the purchase btn is clicked
 function sendProductToCart(i) {
  let output = document.querySelectorAll('#bag-output')[0];
  let result = Number(output.innerText) + 1;
@@ -11,8 +15,6 @@ function sendProductToCart(i) {
  }
 
   output.innerText = result
-
-
   
 }
 
@@ -23,6 +25,14 @@ function sendProductToCart(i) {
 //     menuDropDown.style.display = 'none'
 //   }
 // }
+
+function cartDisplay() {
+  if (cartBtn.classList.toggle('active')) {
+    cartOffScreen.classList.toggle('active')
+  } else {
+    cartOffScreen.classList.toggle('active')
+  }
+}
 
 
 
@@ -36,3 +46,7 @@ for (let i = 0 ; i < purchaseBtn.length ; i++ ) {
 // burgerToggle.addEventListener('click', function(){
 //   hamBurgerMenu()
 // })
+
+cartBtn.addEventListener('click', function(){
+  cartDisplay()
+})

@@ -40,16 +40,12 @@ p {
   border: none;
 }
 
-.bi-bag:hover {
-  width: 10px;
-  background-color: #e7ecef;
-}
+
 
 
 .input {
   position: absolute;
   font-size: 14px;
-
   height: 0;
   right: 33px;
   top: 46px;
@@ -60,7 +56,7 @@ p {
   font-size: 30px;
   color: #98c1d9;
   cursor: pointer;
-  transition: 0.1s;
+  z-index: 1;
 }
 
 .ham-burger {
@@ -183,6 +179,22 @@ header {
   left: 0;
 }
 
+.shopping-section {
+  position: absolute;
+  height: 662px;
+  top: 0px;
+  width: 324px;
+  right: -324px;
+  background-color: #98c1d9;
+  transition-property: right;
+  transition-duration: .8s;
+  z-index: 2;
+  transition-timing-function: ease-in;
+}
+
+.shopping-section.active {
+  right: -76px;
+}
 /***** header ******/
 
 
