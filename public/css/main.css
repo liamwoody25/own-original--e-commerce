@@ -49,15 +49,16 @@ p {
   height: 0;
   right: 23px;
   top: -3px;
+  z-index: 2;
   color: #98c1d9;
 }
 
 .bi-bag {
-  position: absolute;
+  position: relative;
   font-size: 30px;
   color: #98c1d9;
   cursor: pointer;
-  z-index: 1;
+  z-index: 2;
 }
 
 /** ham-buger menu **/
@@ -78,6 +79,7 @@ p {
   border-radius: 15px;
   position: absolute;
   right: 84px;
+  z-index: 2;
   transform: translate(-50%, -50%);
   transition-property: transform, opacity, top ;
   transition-duration: .9s, .6s;
@@ -185,12 +187,12 @@ header {
 }
 
 .shopping-section {
-  position: absolute;
+  position: fixed;
   height: 662px;
   top: 0px;
   width: 324px;
   right: -324px;
-  background-color: #98c1d9;
+  background-color: #e7ecef;
   transition-property: right;
   transition-duration: .8s;
   z-index: 1;
