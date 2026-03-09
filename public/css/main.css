@@ -40,22 +40,19 @@ p {
   border: none;
 }
 
-
-
-
 .input {
   position: relative;
-  font-size: 14px;
+  font-size: 13px;
   height: 0;
-  right: 23px;
-  top: -3px;
+  right: 20px;
+  top: -2px;
   z-index: 2;
   color: #98c1d9;
 }
 
 .bi-bag {
   position: relative;
-  font-size: 30px;
+  font-size: 24px;
   color: #98c1d9;
   cursor: pointer;
   z-index: 2;
@@ -78,20 +75,20 @@ p {
   height: 7px;
   border-radius: 15px;
   position: absolute;
-  right: 84px;
+  right:66px;
   z-index: 2;
   transform: translate(-50%, -50%);
   transition-property: transform, opacity, top ;
   transition-duration: .9s, .6s;
-  top: 70px;
+  top: 57px;
 }
 
 .bar-center {
-  top: 59px;
+  top: 46px;
 }
 
 .bar-bottom {
-  top: 47px;
+  top: 36px;
 }
 
 .ham-burger.active .bar-top {
@@ -167,9 +164,11 @@ body {
 /***** header ******/
 
 header {
+  position: relative;
+  z-index: 2;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: baseline;
   margin-bottom: 20px;
 }
 
@@ -190,8 +189,8 @@ header {
   position: fixed;
   height: 662px;
   top: 0px;
-  width: 324px;
-  right: -324px;
+  width: 452px;
+  right: -455px;
   background-color: #e7ecef;
   transition-property: right;
   transition-duration: .8s;
@@ -231,6 +230,7 @@ header {
   bottom: 289px;
   left: 25px;
   width: 280px;
+
   height: 0;
 }
 
