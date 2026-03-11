@@ -43,9 +43,10 @@ p {
 .input {
   position: relative;
   font-size: 13px;
+  display: flex;
+  justify-content: center;
   height: 0;
-  right: 20px;
-  top: -2px;
+  bottom: 23px;
   z-index: 2;
   color: #98c1d9;
 }
@@ -147,7 +148,7 @@ p {
 .container {
   max-width: 375px;
   margin: 14px;
-  width: 92%;
+  width: 91%;
 }
 
 body {

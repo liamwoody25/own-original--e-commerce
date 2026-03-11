@@ -9,7 +9,6 @@ const bagProducts = [
     Name: 'macbook',
     category: 'laptop',
     price: 400,
-    
   }
 ]
 
@@ -24,7 +23,6 @@ function sendProductToCart(i) {
  }
 
   output.innerText = result
-  
 }
 
 
