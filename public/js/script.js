@@ -4,20 +4,23 @@ const cartBtn = document.querySelector('.bi-bag');
 const cartOffScreen = document.querySelector('.shopping-section')
 const menuDropDown = document.querySelector('.nav-bar');
 
+
+// 
 const bagProducts = [
   {
     Name: 'macbook',
     category: 'laptop',
-    price: 400,
+    price: 899,
   },
   {
     name:'android',
     category:'smartwatch',
+    price: 399,
   },
   {
     name:'iphone',
     category: 'smartphone',
-    
+    price: 699,
   }
 ]
 
