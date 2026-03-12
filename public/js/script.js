@@ -9,6 +9,15 @@ const bagProducts = [
     Name: 'macbook',
     category: 'laptop',
     price: 400,
+  },
+  {
+    name:'android',
+    category:'smartwatch',
+  },
+  {
+    name:'iphone',
+    category: 'smartphone',
+    
   }
 ]
 
