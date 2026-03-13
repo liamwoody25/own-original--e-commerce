@@ -31,7 +31,7 @@ const bagProducts = [
     name: 'ipad',
     category: 'tablet',
     price: 499,
-  }
+  },
 ]
 
 
@@ -56,28 +56,31 @@ function removeProductFomBag() {
 function updateBag(){
   const bagContainer = document.querySelector('.cart-content');
 
-  bagProducts.forEach(function(item){
+  bagProducts.forEach(function(product){
+    bagContainer.innerHTML= ''
 
-    const productCard = document.createElement('div');
-    productCard.classList.add('product-card');
+    const productCard = document.createElement('article');
+    productCard.classList.add('product-item');
 
     const productImg = document.createElement('img');
-    productImg.src = './public/assets/images/pexels-morningtrain-laptop.png'
-    productImg.alt = 'image of laptop';
+    productImg.classList.add('card-img');
+    productImg.src = '';
 
     const productContent = document.createElement('div');
     productContent.classList.add('product-content-container');
 
-
     const productName = document.createElement('h3');
-    productName.textContent = item.name;
+    productName.textContent = product.name;
+
+    const subTitle = document.createElement('p');
+    subTitle.textContent = product.category
 
     const cardPrice = document.createElement('span');
-    cardPrice.textContent = `${item.price}`
+    cardPrice.textContent = `${product.price}`;
 
-    const removeButton = document.createElement('button');
-    removeButton.classList.add('remove-button');
-    removeButton.innerHTML = '<i class="bi bi-x"></i>'
+    productCard.append(productImg, productContent, )
+    productContent.append(productName, subTitle, cardPrice)
+    bagContainer.append(productCard)
 
    
   })
@@ -85,7 +88,30 @@ function updateBag(){
 }
 
 
+//  const productCard = document.createElement('div');
+//     productCard.classList.add('product-item');
 
+//     const productImg = document.createElement('img');
+//     productImg.classList.add('card-img')
+//     productImg.src = '/public/assets/images/pexels-morningtrain-laptop.png'
+//     productImg.alt = 'image of laptop';
+
+//     const productContent = document.createElement('div');
+//     productContent.classList.add('product-content-container');
+
+
+//     const productName = document.createElement('h3');
+//     productName.textContent = product.name;
+
+//     const cardPrice = document.createElement('span');
+//     cardPrice.textContent = `${product.price}`
+
+//     const removeButton = document.createElement('button');
+//     removeButton.classList.add('remove-button');
+//     removeButton.innerHTML = '<i class="bi bi-x"></i>'
+
+//     productContent.append(productName, cardPrice, removeButton)
+//     bagContainer.append(productCard,productImg )
 
 
 
@@ -114,7 +140,7 @@ function cartDisplay() {
 for (let i = 0 ; i < purchaseBtn.length ; i++ ) {
   purchaseBtn[i].addEventListener('click', function(){
     sendProductToCart(i)
-    updateBag(i)
+    updateBag(bagProducts[i])
   })
 }
 
