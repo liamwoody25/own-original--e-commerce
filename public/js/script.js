@@ -21,6 +21,16 @@ const bagProducts = [
     name:'iphone',
     category: 'smartphone',
     price: 699,
+  },
+  {
+    name: 'headphones',
+    category: 'accessory',
+    price: 250,
+  },
+  {
+    name: 'ipad',
+    category: 'tablet',
+    price: 499,
   }
 ]
 
@@ -38,6 +48,41 @@ function sendProductToCart(i) {
 }
 
 
+
+function removeProductFomBag() {
+  console.log('this function works')
+}
+
+function updateBag(){
+  const bagContainer = document.querySelector('.cart-content');
+
+  bagProducts.forEach(function(item){
+
+    const productCard = document.createElement('div');
+    productCard.classList.add('product-card');
+
+    const productImg = document.createElement('img');
+    productImg.src = './public/assets/images/pexels-morningtrain-laptop.png'
+    productImg.alt = 'image of laptop';
+
+    const productContent = document.createElement('div');
+    productContent.classList.add('product-content-container');
+
+
+    const productName = document.createElement('h3');
+    productName.textContent = item.name;
+
+    const cardPrice = document.createElement('span');
+    cardPrice.textContent = `${item.price}`
+
+    const removeButton = document.createElement('button');
+    removeButton.classList.add('remove-button');
+    removeButton.innerHTML = '<i class="bi bi-x"></i>'
+
+   
+  })
+  
+}
 
 
 
@@ -69,6 +114,7 @@ function cartDisplay() {
 for (let i = 0 ; i < purchaseBtn.length ; i++ ) {
   purchaseBtn[i].addEventListener('click', function(){
     sendProductToCart(i)
+    updateBag(i)
   })
 }
 
