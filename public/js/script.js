@@ -56,15 +56,14 @@ function removeProductFomBag() {
 function updateBag(){
   const bagContainer = document.querySelector('.cart-content');
 
+   bagContainer.innerHTML= ''
   bagProducts.forEach(function(product){
-    bagContainer.innerHTML= ''
-
     const productCard = document.createElement('article');
     productCard.classList.add('product-item');
 
     const productImg = document.createElement('img');
     productImg.classList.add('card-img');
-    productImg.src = '';
+    productImg.src = './public/assets/images';
 
     const productContent = document.createElement('div');
     productContent.classList.add('product-content-container');
@@ -78,7 +77,7 @@ function updateBag(){
     const cardPrice = document.createElement('span');
     cardPrice.textContent = `${product.price}`;
 
-    productCard.append(productImg, productContent, )
+    productCard.append(productImg, productContent )
     productContent.append(productName, subTitle, cardPrice)
     bagContainer.append(productCard)
 
@@ -88,31 +87,11 @@ function updateBag(){
 }
 
 
-//  const productCard = document.createElement('div');
-//     productCard.classList.add('product-item');
 
-//     const productImg = document.createElement('img');
-//     productImg.classList.add('card-img')
-//     productImg.src = '/public/assets/images/pexels-morningtrain-laptop.png'
-//     productImg.alt = 'image of laptop';
-
-//     const productContent = document.createElement('div');
-//     productContent.classList.add('product-content-container');
-
-
-//     const productName = document.createElement('h3');
-//     productName.textContent = product.name;
-
-//     const cardPrice = document.createElement('span');
-//     cardPrice.textContent = `${product.price}`
 
 //     const removeButton = document.createElement('button');
 //     removeButton.classList.add('remove-button');
 //     removeButton.innerHTML = '<i class="bi bi-x"></i>'
-
-//     productContent.append(productName, cardPrice, removeButton)
-//     bagContainer.append(productCard,productImg )
-
 
 
 
@@ -140,7 +119,7 @@ function cartDisplay() {
 for (let i = 0 ; i < purchaseBtn.length ; i++ ) {
   purchaseBtn[i].addEventListener('click', function(){
     sendProductToCart(i)
-    updateBag(bagProducts[i])
+    updateBag()
   })
 }
 
