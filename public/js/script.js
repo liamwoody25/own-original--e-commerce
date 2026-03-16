@@ -8,7 +8,7 @@ const menuDropDown = document.querySelector('.nav-bar');
 // 
 const bagProducts = [
   {
-    Name: 'macbook',
+    name: 'macbook',
     category: 'laptop',
     price: 899,
   },
@@ -44,6 +44,8 @@ function sendProductToCart(i) {
   result = 0
  }
 
+
+
   output.innerText = result
 }
 
@@ -77,15 +79,19 @@ function updateBag(){
     const cardPrice = document.createElement('span');
     cardPrice.textContent = `${product.price}`;
 
+    const removeButton = document.createElement('button');
+    removeButton.classList.add('remove-button');
+    removeButton.innerHTML = '<i class="bi bi-x"></i>'
+
+
     productCard.append(productImg, productContent )
-    productContent.append(productName, subTitle, cardPrice)
+    productContent.append(productName, subTitle, cardPrice, removeButton)
     bagContainer.append(productCard)
 
    
   })
   
 }
-
 
 
 
@@ -119,7 +125,7 @@ function cartDisplay() {
 for (let i = 0 ; i < purchaseBtn.length ; i++ ) {
   purchaseBtn[i].addEventListener('click', function(){
     sendProductToCart(i)
-    updateBag()
+    updateBag(i)
   })
 }
 
