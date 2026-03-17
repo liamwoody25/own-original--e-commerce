@@ -1,4 +1,4 @@
-const purchaseBtn = document.querySelectorAll('.item-btn')
+const purchaseBtn = document.querySelector('.item-btn')
 const burgerToggle = document.querySelector('.ham-burger');
 const cartBtn = document.querySelector('.bi-bag');
 const cartOffScreen = document.querySelector('.shopping-section')
@@ -36,8 +36,8 @@ const bagProducts = [
 
 
 // this function sends the product to the cart when the purchase btn is clicked
-function sendProductToCart(i) {
- let output = document.querySelectorAll('#bag-output')[0];
+function sendProductToCart() {
+ let output = document.querySelector('#bag-output');
  let result = Number(output.innerText) + 1;
 
  if (result > 10) {
@@ -67,6 +67,8 @@ function updateBag(){
     productImg.classList.add('card-img');
     productImg.src = './public/assets/images';
 
+    // these codes are for the bag item contents
+
     const productContent = document.createElement('div');
     productContent.classList.add('product-content-container');
 
@@ -77,15 +79,42 @@ function updateBag(){
     subTitle.textContent = product.category
 
     const cardPrice = document.createElement('span');
-    cardPrice.textContent = `${product.price}`;
+    cardPrice.textContent = `$${product.price}`;
+
+     // these codes are for the bag item contents
+
+
+
+    // these codes are for the bag item buttons
+
+    const btnContent = document.createElement('div');
+    btnContent.classList.add('quantity-btn-content');
+
+    const addBtn = document.createElement('button');
+    addBtn.classList.add('insert-btn');
+    addBtn.innerHTML = '<i class="bi bi-plus-square"></i>';
+
+    addBtn.addEventListener('click', function(){
+     sendProductToCart()
+     quantityOutput.app
+    })
+
+    const quantityOutput = document.createElement('span');
+    quantityOutput.classList.add('item-output');
+    quantityOutput.textContent = '0'
 
     const removeButton = document.createElement('button');
     removeButton.classList.add('remove-button');
-    removeButton.innerHTML = '<i class="bi bi-x"></i>'
+    removeButton.innerHTML = '<i class="bi bi-dash-square"></i>'
+
+    // these codea are for the bag item buttons
+
 
 
     productCard.append(productImg, productContent )
-    productContent.append(productName, subTitle, cardPrice, removeButton)
+    
+    productContent.append(productName, subTitle, cardPrice, btnContent)
+    btnContent.append(removeButton, quantityOutput, addBtn )
     bagContainer.append(productCard)
 
    
@@ -123,11 +152,13 @@ function cartDisplay() {
 
 
 for (let i = 0 ; i < purchaseBtn.length ; i++ ) {
-  purchaseBtn[i].addEventListener('click', function(){
-    sendProductToCart(i)
-    updateBag(i)
-  })
+ 
 }
+
+  purchaseBtn.addEventListener('click', function(){
+    sendProductToCart()
+    updateBag()
+  })
 
 
 // burgerToggle.addEventListener('click', function(){

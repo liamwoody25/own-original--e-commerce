@@ -124,6 +124,8 @@ p {
   bottom: 75px;
 }
 
+/** product content **/
+
 .item-btn {
   padding: 7px 10px;
   border-radius: 5px;
@@ -136,6 +138,32 @@ p {
 .item-price {
   font-size: 12px;
 }
+
+/** product content **/
+
+
+
+
+/** bag item button **/
+
+.quantity-btn-content {
+  border: 1px solid #fff;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.insert-btn,
+.remove-button {
+   background-color: transparent;
+   border: none;
+}
+
+/** bag item button **/
+
+
 /***** components ******/
 
 
