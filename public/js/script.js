@@ -27,7 +27,7 @@ const bagProducts = [
     Image: './public/assets/images/E9965BCB-3B0C-414F-9F91-smartphone.jpg'
   },
   {
-    name: 'headphones',
+    name: 'headset',
     category: 'accessory',
     price: 250,
     Image: '/public/assets/images/pexels-cottonbro-headphones-jpg.jpg'
@@ -42,82 +42,106 @@ const bagProducts = [
 
 
 // this function sends the product to the cart when the purchase btn is clicked
-function sendProductToCart(i) {
- let output = document.querySelector('#bag-output');
- let result = Number(output.innerText) + 1;
 
- if (result > 10) {
-  result = 0
- }
+function sendProductToBag(i){
+  const output = document.querySelector('#bag-output');
+  let displayQuantity = Number(output.innerText) + 1;
 
-  output.innerText = result
+  if (displayQuantity > 10) {
+    displayQuantity = 0;
+  }
 
-  
+  output.innerText = displayQuantity
+}
 
-
-
-  
-
-    bagContainer.innerHTML= ''
-
-  bagProducts.forEach(function(product){
-
-    // this code is to create the product for the bag
-      const cardProduct = document.createElement('article');
-      cardProduct.classList.add('product-item');
-
-      const cardImg = document.createElement('img');
-      cardImg.classList.add('product-img');
-      cardImg.src = product.Image;
-
-    // this code is to create the product for the bag
+// this function sends the product to the cart when the purchase btn is clicked
 
 
-    // these codes are for the bag item contents
 
-      const productContent = document.createElement('div');
-      productContent.classList.add('product-content-container');
+bagProducts.forEach(function(item){
 
-      const productName = document.createElement('h3');
-      productName.textContent = product.name;
+  // these code is for creating the card product 
+  const cardProduct = document.createElement('article');
+  cardProduct.classList.add('product-item')
 
-      const subTitle = document.createElement('p');
-      subTitle.textContent = product.category;
+  const cardImg = document.createElement('img');
+  cardImg.classList.add('card-img')
+  cardImg.src = item.Image;
 
-      const cardPrice = document.createElement('span');
-      cardPrice.textContent = `$${product.price}`;
+  // these code is for creating the card product 
 
-    // these codes are for the bag item contents
-   
 
-   
 
-   
+  // these codes are for the bag item contents
 
-    cardProduct.append(cardImg, productContent)
-    productContent.append(productName, subTitle, cardPrice);
-    bagContainer.append(cardProduct)
+  const productContent = document.createElement('div');
+  productContent.classList.add('product-content-container');
+
+  const productName = document.createElement('h3');
+  productName.textContent = item.name;
+
+  const subTitle = document.createElement('p');
+  subTitle.textContent = item.category;
+
+  const cardPrice = document.createElement('span');
+  cardPrice.textContent = `$${item.price}`
+
+  // these codes are for the bag item contents
+
+
+
+  // these codes create the quantity button
+
+  const quantityContent = document.createElement('div');
+  quantityContent.classList.add('quantity-btn-content');
+
+  const removeBtn = document.createElement('button');
+  removeBtn.classList.add('remove-button')
+  removeBtn.innerHTML = '<i class="bi bi-dash-square"></i>';
+
+  const quantityOutput = document.createElement('span');
+  quantityOutput.classList.add('item-output');
+  quantityOutput.textContent = '0';
+
+  const addtBtn = document.createElement('button');
+  addtBtn.classList.add('insert-btn');
+  addtBtn.innerHTML = '<i class="bi bi-plus-square"></i>'
+
+
+  removeBtn.addEventListener('click', function(){
+    const output = document.querySelector('#bag-output');
+    let displayQuantity = Number(output.innerText) - 1;
+    
+    if (displayQuantity < 0) {
+      displayQuantity = 0;
+    }
+
+    output.innerText = displayQuantity;
   })
-  }
+
+  addtBtn.addEventListener('click', function(){
+    const output = document.querySelector('#bag-output');
+    let displayQuantity = Number(output.innerText) + 1
+
+    if (displayQuantity > 10 ) {
+      displayQuantity = 0;
+    }
+
+    output.innerText = displayQuantity
+  })
+
+  // these codes create the quantity button
 
 
 
-function removeProductFromBag() {
-  let output = document.querySelector('#bag-output');
-  let result = Number(output.innerText) - 1;
 
-  if (result < 0) {
-    result = 0
-  }
 
-  
-  output.innerText = result
-}
 
-function updateBag(){
- 
-  
-}
+  cardProduct.append(cardImg, productContent, quantityContent)
+  productContent.append(productName, subTitle, cardPrice)
+  quantityContent.append(removeBtn, quantityOutput, addtBtn)
+  bagContainer.append(cardProduct)
+})
 
 
 
@@ -157,11 +181,12 @@ function cartDisplay() {
 
 
 
-for (let i = 0 ; i < purchaseBtn.length ; i++ ) {
+for (let i = 0; i < purchaseBtn.length; i++) {
   purchaseBtn[i].addEventListener('click', function(){
-    sendProductToCart(i)
+    sendProductToBag(bagProducts[i],[i])
   })
 }
+
 
  
 
