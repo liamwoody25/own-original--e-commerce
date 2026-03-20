@@ -42,7 +42,7 @@ p {
   border: none;
 }
 
-.input {
+#input {
   position: relative;
   font-size: 13px;
   display: flex;
@@ -135,6 +135,18 @@ p {
   box-shadow: 0px 1px 0px black;
   margin-top: 14px;
   margin-bottom: 14px;
+}
+
+.product-btn {
+  padding: 7px 10px;
+  width: 53%;
+  border-radius: 5px;
+  border: none;
+  margin-bottom:14px;
+  box-shadow: 0px 1px 0px black;
+  background-color: #efefef;
+  text-align: center;
+
 }
 
 .item-price {
@@ -369,4 +381,51 @@ header {
 
 .card-text-content p {
   margin: 7px ;
+}
+
+/**** product section  ****/
+
+
+
+/**** deals section  ****/
+
+.todays-deals {
+  background-color: #e7ecef;
+  border-radius: 15px;
+}
+
+.todays-deals h2 {
+  color: #274c77;
+  text-align: center;
+}
+
+.todays-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:center;
+}
+
+.item-card {
+  border-radius: 15px;
+  width: 70%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background-color: #98c1d9;
+}
+
+.item-img {
+  width: 100%;
+  border-radius: 15px 15px 0px 0px;
+}
+
+.product-text-content {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding: 5px;
+}
+
+.product-text-content h3,p {
+  margin: 5px 0;
 }

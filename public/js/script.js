@@ -43,8 +43,9 @@ const bagProducts = [
 
 // this function sends the product to the cart when the purchase btn is clicked
 
-function sendProductToBag(i){
-  const output = document.querySelector('#bag-output');
+function sendProductToBag(bagProduct,i){
+  const product = bagProducts[i]
+  const output = document.querySelector('.item-output');
   let displayQuantity = Number(output.innerText) + 1;
 
   if (displayQuantity > 10) {
@@ -66,6 +67,7 @@ bagProducts.forEach(function(item){
 
   const cardImg = document.createElement('img');
   cardImg.classList.add('card-img')
+  cardImg.alt = 'card image'
   cardImg.src = item.Image;
 
   // these code is for creating the card product 
@@ -101,15 +103,18 @@ bagProducts.forEach(function(item){
 
   const quantityOutput = document.createElement('span');
   quantityOutput.classList.add('item-output');
-  quantityOutput.textContent = '0';
+  quantityOutput.innerHTML = '0';
 
   const addtBtn = document.createElement('button');
   addtBtn.classList.add('insert-btn');
   addtBtn.innerHTML = '<i class="bi bi-plus-square"></i>'
 
 
+// this eventlistener code is for when the user wants to remove a product from the bag
+
   removeBtn.addEventListener('click', function(){
-    const output = document.querySelector('#bag-output');
+    
+    const output = document.querySelector('.item-output');
     let displayQuantity = Number(output.innerText) - 1;
     
     if (displayQuantity < 0) {
@@ -117,10 +122,20 @@ bagProducts.forEach(function(item){
     }
 
     output.innerText = displayQuantity;
+
+    if (displayQuantity === 0) {
+      cardProduct.remove(cardImg, productContent, quantityContent)
+    }
   })
 
+  // this eventlistener code is for when the user wants to remove a product from the bag
+
+
+  
+ // this eventlistener code is for when the user wants to add a product to the bag
+
   addtBtn.addEventListener('click', function(){
-    const output = document.querySelector('#bag-output');
+    const output = document.querySelector('.item-output');
     let displayQuantity = Number(output.innerText) + 1
 
     if (displayQuantity > 10 ) {
@@ -128,7 +143,11 @@ bagProducts.forEach(function(item){
     }
 
     output.innerText = displayQuantity
+
+    
   })
+
+   // this eventlistener code is for when the user wants to add a product to the bag
 
   // these codes create the quantity button
 
